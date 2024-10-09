@@ -19,7 +19,7 @@ Before using this script, you need to generate a file containing the output of t
 
 
 ```bash
-find ./ -exec stat '|{}' \; > stat.meta
+find ./ -exec stat '{}' \; > stat.meta
 ```
 
 This command will create a file named `stat.meta` with the metadata of all files in the root directory. Make sure to run itwith the approirate permissions.
