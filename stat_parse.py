@@ -72,8 +72,13 @@ def get_permission(data):
 
 
 def get_owner(data):
-    uid = data[3][4] + data[3][5]
-    gid = data[3][8] + data[3][9]
+    if len(data[3]) < 10:
+        uid = data[3][4] + data[3][5]
+        gid = data[3][4]
+        uid = uid.replace("Gid:", "")
+    else:
+        uid = data[3][4] + data[3][5]
+        gid = data[3][8] + data[3][9]
     return uid.strip('()'), gid.strip('()')
 
 
