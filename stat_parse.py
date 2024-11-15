@@ -12,7 +12,7 @@ def read_file(infile):
 def parse_metadata(lines):
     fileName, size, inode, permission, owner, group, atime, mtime, ctime, btime = [], [], [], [], [], [], [], [], [], []
     utc = lines[4].split()[-1]
-    if 'Birth' in lines[7]:
+    if 'Birth' in lines[7] and ' - ' not in lines[7]:
         jmp_idx = 8
         btime_check = True
     else:
@@ -83,7 +83,10 @@ def get_owner(data):
 
 
 def get_timestamp(data, idx):
-    date = convert_to_utc(f"{data[idx][1]} {data[idx][2].split('.')[0]} {data[idx][3]}")
+    if len(data[idx]) >= 4:
+        date = convert_to_utc(f"{data[idx][1]} {data[idx][2].split('.')[0]} {data[idx][3]}")
+    else:
+        date = "-"
     return date
 
 
