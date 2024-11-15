@@ -22,7 +22,7 @@ Before using this script, you need to generate a file containing the output of t
 find ./ -exec stat '{}' \; > stat.meta
 ```
 
-This command will create a file named `stat.meta` with the metadata of all files in the root directory. Make sure to run itwith the approirate permissions.
+This command will create a file named `stat_output.txt` with the metadata of all files in the root directory. Make sure to run itwith the approirate permissions.
 
 ## Features 
 - Reads the output of the `stat` command from a specified file.
@@ -66,7 +66,7 @@ python script_name.py -f path_to_stat_file -o output_file_name.csv
 Assuming you have a file named `stat_output.txt` containing the output of the `stat` command:
 
 ```bash
-python script-name.py -f stat_output.txt -o output_metadata.csv
+python stat_parse.py -f stat_output.txt -o output_metadata.csv
 ```
 
 This will generate a file named `output_metadata.csv` in the same directory.
