@@ -53,7 +53,7 @@ This command will create a file named `stat_output.txt` with the metadata of all
 Run the script from the command line, providing the path to the `stat` command output file and (optionally) specifying the output CSV file name.
 
 ```bash
-python script_name.py -f path_to_stat_file -o output_file_name.csv
+python stat_parse.py -f stat.meta -o stat.csv
 ```
 
 ## Arguments
@@ -63,13 +63,13 @@ python script_name.py -f path_to_stat_file -o output_file_name.csv
 
 ## Example
 
-Assuming you have a file named `stat_output.txt` containing the output of the `stat` command:
+Assuming you have a file named `stat.meta` containing the output of the `stat` command:
 
 ```bash
 python stat_parse.py -f stat_output.txt -o output_metadata.csv
 ```
 
-This will generate a file named `output_metadata.csv` in the same directory.
+This will generate a file named `stat.csv` in the same directory.
 
 ## Acknowledgements
 
