@@ -66,7 +66,7 @@ python stat_parse.py -f stat.meta -o stat.csv
 Assuming you have a file named `stat.meta` containing the output of the `stat` command:
 
 ```bash
-python stat_parse.py -f stat_output.txt -o output_metadata.csv
+python stat_parse.py -f stat.meta -o stat.csv
 ```
 
 This will generate a file named `stat.csv` in the same directory.
